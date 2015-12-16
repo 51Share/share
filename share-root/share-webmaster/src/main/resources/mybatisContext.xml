@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="lazyLoadingEnabled" value="false" />
+	</settings>
+	<typeAliases>
+		<typeAlias alias="Admin" type="com.league.share.domain.Admin" />
+		<typeAlias alias="Resource" type="com.league.share.domain.Resource" />
+		<typeAlias alias="Role" type="com.league.share.domain.Role" />
+	</typeAliases>
+</configuration>

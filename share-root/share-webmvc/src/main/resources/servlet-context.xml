@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+  
+    <!-- enable component scanning -->
+	<mvc:annotation-driven />
+   <!--  <context:component-scan base-package="com.league.share.domain" /> -->
+	<context:component-scan base-package="com.league.share.web.controller" />
+	<!-- mvc configuration-->
+	<mvc:resources mapping="/res/**" location="/res/" />
+	<mvc:view-controller path="/" view-name="/index" />
+	<mvc:default-servlet-handler />
+    <mvc:interceptors>
+    	<!-- http request to relative https request 
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/favicon.ico" />
+			<mvc:exclude-mapping path="/res/**" />
+			<beans:bean class="com.silverfox.finance.web.intercepter.DomainHandlerInterceptor" />
+		</mvc:interceptor>
+		-->
+		<!-- On pre-handle site security management -->
+		<mvc:interceptor >
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/" />
+			<mvc:exclude-mapping path="/index" />
+			<mvc:exclude-mapping path="/login" />
+			<mvc:exclude-mapping path="/totp/**" />
+			<mvc:exclude-mapping path="/gauth/**" />
+			<mvc:exclude-mapping path="/barcode" />
+			<mvc:exclude-mapping path="/favicon.ico" />
+			<!-- exclude mapping for web resource-->
+			<mvc:exclude-mapping path="/res/**" />
+			<beans:bean class="com.league.share.web.intercepter.SecurityInterceptorAdapter" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value><!-- avoid download json file in IE -->
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="1073741824" /> 
+		<property name="maxInMemorySize" value="4096" /> 
+	</bean> 
+	
+	<!-- RESTful MVC view-->
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="1" />
+        <property name="contentNegotiationManager">
+            <bean class="org.springframework.web.accept.ContentNegotiationManager">
+                <constructor-arg>
+                    <bean class="org.springframework.web.accept.PathExtensionContentNegotiationStrategy">
+                        <constructor-arg>
+                            <map>
+                                <entry key="json" value="application/json"/>
+                                <entry key="xml" value="application/xml"/>
+                            </map>
+                        </constructor-arg>
+                    </bean>
+                </constructor-arg>
+            </bean>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <!-- JSON View -->
+                <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+                <!-- XML View -->
+                <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+                    <constructor-arg>
+                        <bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+                            <property name="packagesToScan">
+                                <list>
+                                    <value>com.league.share.domain</value>
+                                </list>
+                            </property>
+                        </bean>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>
+         
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="order" value="1"></property>  
+        <property name="prefix" value="/WEB-INF/view/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+	 
+	<!-- i18n -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/i18n/bundle" />
+		<property name="cacheSeconds" value="0" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+		
+    <!-- exception to the handler view -->  
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+       <property name="exceptionMappings">  
+           <props>  
+                 <prop key="java.lang.Exception">error</prop>  
+                 <prop key="java.lang.Throwable">error</prop>  
+             </props>  
+        </property> 
+        <property name="statusCodes">  
+             <props>  
+                 <prop key="error">500</prop>  
+             </props>  
+         </property> 
+         <property name="exceptionAttribute" value="ex" />  
+         <property name="warnLogCategory" value="WARN" />  
+         <property name="defaultErrorView" value="error" /> 
+         <property name="defaultStatusCode" value="500" />
+    </bean>  
+    
+</beans>
