@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+/share-api/target
+/share-orm/target
+/share-service/target
+/share-util/target
+/share-webmaster/target
+/share-webmvc/target
+=======
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+>>>>>>> 24d6c0cdc97db8c69172022449db75699dee1b79
