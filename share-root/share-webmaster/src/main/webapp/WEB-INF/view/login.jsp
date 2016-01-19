@@ -12,7 +12,7 @@
 	<title><spring:message code="system.name" /></title>
   </head>
   <body>
-	<div class="loginWraper">
+	<div id="loginWraper"  class="loginWraper">
 	  <div id="loginform" class="loginBox">
 	    <form class="form form-horizontal" action="index.html" method="post">
 	      <div class="row cl">
@@ -30,13 +30,12 @@
 	      <div class="row cl">
 	      	<label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
 	        <div class="formControls col-8">
-	          <input class="input-text size-M" type="text" id="validateCode" name="code" placeholder="验证码" onblur="if(this.value==''){this.placeholder='验证码'}" onclick="if(this.placeholder=='验证码'){this.placeholder='';}" value="" style="width:195px;border-radius:8px">
+	          <input class="input-text size-M" type="text" id="validateCode" name="code" placeholder="验证码" onblur="if(this.value==''){this.placeholder='验证码'}" onclick="if(this.placeholder=='验证码'){this.placeholder='';}" value="" style="width:193px;border-radius:8px">
 	          <img id="securityCode" src="${pageContext.request.contextPath}/validate/code" onclick="javascript:refreshSecurityCode()" title="看不清，换一张" style="border-radius:8px"> <!-- <a id="kanbuq" href="javascript:refreshSecurityCode();">看不清，换一张</a> --> </div>
 	      </div>
 	      <div class="row">
 	        <div class="formControls col-8 col-offset-3">
-	          <label for="online">
-	            <input type="checkbox" name="online" id="online" value="">使我保持登录状态</label>
+	          <label for="online" id="online"><input type="checkbox" name="online" id="online" value="">使我保持登录状态</label>
 	        </div>
 	      </div>
 	      <div class="row">
@@ -55,6 +54,10 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/lib/jquery/1.9.1/jquery.tips.js"></script> 
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/H-ui.js"></script>
 	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#loginWraper').find('input').css({'font-style':'oblique','font-weight':'900'});
+		$('#online').css({'font-style':'oblique','font-weight':'900'});
+	})
 	function login(){
 		if(check()){
 			var userName = $('#userName').val();
