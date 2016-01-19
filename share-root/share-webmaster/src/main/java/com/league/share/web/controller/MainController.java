@@ -84,7 +84,7 @@ public class MainController extends BaseController{
 	public void validateCode(HttpServletRequest request, HttpServletResponse response){
 		try{
 			HttpSession session = request.getSession();
-			Object[] obj=CaptchaUtil.getCaptchaImage(70, 31, 16, 100, 500, true,true, ComplexLevel.SIMPLE);
+			Object[] obj=CaptchaUtil.getCaptchaImage(100, 31, 16, 100, 500, true,true, ComplexLevel.SIMPLE);
 			response.setHeader("Pragma","no-cache");
 			response.setHeader("Cache-Control","no-cache");
 			response.setDateHeader("Expires",0);

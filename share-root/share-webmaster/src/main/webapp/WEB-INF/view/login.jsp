@@ -18,20 +18,20 @@
 	      <div class="row cl">
 	        <label class="form-label col-3"><i class="Hui-iconfont">&#xe60d;</i></label>
 	        <div class="formControls col-8">
-	          <input id="userName" name="userName" type="text" placeholder="用户名,4-20位数字和字母组合" class="input-text size-M">
+	          <input id="userName" name="userName" type="text" placeholder="用户名,4-20位数字和字母组合" class="input-text size-M" style="border-radius:8px">
 	        </div>
 	      </div>
 	      <div class="row cl">
 	        <label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
 	        <div class="formControls col-8">
-	          <input id="password" name="password" type="password" placeholder="密 码,6-20位数字和字母组合" class="input-text size-M">
+	          <input id="password" name="password" type="password" placeholder="密 码,6-20位数字和字母组合" class="input-text size-M" style="border-radius:8px">
 	        </div>
 	      </div>
 	      <div class="row cl">
 	      	<label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
 	        <div class="formControls col-8">
-	          <input class="input-text size-M" type="text" id="validateCode" name="code" placeholder="验证码" onblur="if(this.value==''){this.placeholder='验证码'}" onclick="if(this.placeholder=='验证码'){this.placeholder='';}" value="" style="width:150px;">
-	          <img id="securityCode" src="${pageContext.request.contextPath}/validate/code" onclick="javascript:refreshSecurityCode()"> <a id="kanbuq" href="javascript:refreshSecurityCode();">看不清，换一张</a> </div>
+	          <input class="input-text size-M" type="text" id="validateCode" name="code" placeholder="验证码" onblur="if(this.value==''){this.placeholder='验证码'}" onclick="if(this.placeholder=='验证码'){this.placeholder='';}" value="" style="width:195px;border-radius:8px">
+	          <img id="securityCode" src="${pageContext.request.contextPath}/validate/code" onclick="javascript:refreshSecurityCode()" title="看不清，换一张" style="border-radius:8px"> <!-- <a id="kanbuq" href="javascript:refreshSecurityCode();">看不清，换一张</a> --> </div>
 	      </div>
 	      <div class="row">
 	        <div class="formControls col-8 col-offset-3">
@@ -40,9 +40,11 @@
 	        </div>
 	      </div>
 	      <div class="row">
-	        <div class="formControls col-8 col-offset-4">
-	          <input name="" type="button" onclick="javascript:login();" class="btn btn-success radius size-L" value="登 录">
-	          <input name="" type="button" onclick="javascript:reset();"class="btn btn-default radius size-L" value="取 消">
+	        <div class="formControls col-2 col-offset-4">
+	          <input name="" type="button" onclick="javascript:login();" class="btn btn-block btn-success radius size-M" value="登  录">
+	        </div>
+	        <div class="formControls col-2 col-offset-0">
+	          <input name="" type="button" onclick="javascript:reset();"class="btn btn-block btn-default radius size-M" value="取  消">
 	        </div>
 	      </div>
 	    </form>
