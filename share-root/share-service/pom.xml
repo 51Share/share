@@ -21,6 +21,34 @@
       <groupId>com.51league.share</groupId>  
       <artifactId>share-util</artifactId>  
     </dependency>
+    <dependency>  
+      <groupId>com.51league.share</groupId>  
+      <artifactId>share-api</artifactId>  
+    </dependency>
+    <dependency>  
+      <groupId>com.51league.share</groupId>  
+      <artifactId>share-orm</artifactId>  
+    </dependency>
+    <dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-oxm</artifactId>
+	</dependency>
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-tx</artifactId>
+	</dependency>
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-web</artifactId>
+	</dependency>
+    <dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-webmvc</artifactId>
+	</dependency>
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-test</artifactId>
+	</dependency>
     <dependency>
 	  <groupId>org.apache.httpcomponents</groupId>
 	  <artifactId>httpclient</artifactId>

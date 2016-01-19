@@ -4,7 +4,8 @@
 <html>
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link type="images/x-icon" rel="shortcut icon" href="${pageContext.request.contextPath}/res/images/favicon.ico">
+	<link rel="icon" href="${pageContext.request.contextPath}/res/images/favicon.ico" type="images/x-icon" />
+	<%-- <link type="images/x-icon" rel="shortcut icon" href="${pageContext.request.contextPath}/res/images/favicon.ico"> --%>
 	<title><spring:message code="system.name" /></title>
   </head>
   <body>

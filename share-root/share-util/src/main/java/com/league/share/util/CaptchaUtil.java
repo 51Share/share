@@ -97,8 +97,8 @@ public class CaptchaUtil {
 	}
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		for (int i = 0; i < 10; i++) {
-			Object[] obj = getCaptchaImage(70, 30, 16, 100, 500, false, true, Color.WHITE, new Color(87, 153, 250), ComplexLevel.SIMPLE);
+		for (int i = 0; i < 2; i++) {
+			Object[] obj = getCaptchaImage(70, 40, 16, 100, 500, false, true, Color.BLUE, new Color(87, 153, 250), ComplexLevel.SIMPLE);
 			//System.out.println("验证码" + obj[1]);
 			new File("D:\\test").mkdir();
 			ImageIO.write((BufferedImage) obj[0], "jpg", new File("D:\\test\\" + System.currentTimeMillis() + ".jpg"));

@@ -17,24 +17,16 @@
 	<mvc:view-controller path="/" view-name="/login" />
 	<mvc:default-servlet-handler />
     <mvc:interceptors>
-    	<!-- http request to relative https request 
-		<mvc:interceptor>
-			<mvc:mapping path="/**" />
-			<mvc:exclude-mapping path="/favicon.ico" />
-			<mvc:exclude-mapping path="/res/**" />
-			<beans:bean class="com.silverfox.finance.web.intercepter.DomainHandlerInterceptor" />
-		</mvc:interceptor>
-		-->
-		<!-- On pre-handle site security management -->
 		<mvc:interceptor >
-			<mvc:mapping path="/**" />
+			<mvc:mapping path="/**"/>
 			<mvc:exclude-mapping path="/" />
-			<mvc:exclude-mapping path="/index" />
+			<!-- <mvc:exclude-mapping path="/index" /> -->
 			<mvc:exclude-mapping path="/login" />
 			<mvc:exclude-mapping path="/totp/**" />
 			<mvc:exclude-mapping path="/gauth/**" />
 			<mvc:exclude-mapping path="/barcode" />
-			<mvc:exclude-mapping path="/favicon.ico" />
+			<mvc:exclude-mapping path="/validate/code" />
+			<mvc:exclude-mapping path="/res/images/favicon.ico" />
 			<!-- exclude mapping for web resource-->
 			<mvc:exclude-mapping path="/res/**" />
 			<beans:bean class="com.league.share.web.intercepter.SecurityInterceptorAdapter" />

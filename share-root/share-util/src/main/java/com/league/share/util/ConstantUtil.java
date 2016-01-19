@@ -148,6 +148,8 @@ public class ConstantUtil {
 	public static final int[] INVESTMENT_AMOUNT = {300, 500, 700, 1000, 5000, 10000, 20000, 50000, 100000};
 	public static final int FINANCE_PERIOD = 60;
 	
+	public static final String DEFAULT_MESSAGE = "";
+	
 	public static final int[] COUPON_AMOUNT = {1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
 		5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,7,7,7,8,8,8,9,9,10,10};
 }

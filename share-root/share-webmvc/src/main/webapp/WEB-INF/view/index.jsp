@@ -129,13 +129,13 @@
 
 
 <div ontouchstart='kmiscro.ajoutevent(event)' ontouchmove='kmiscro.ajoutevent(event)' onmousedown='kmiscro.ajoutevent(event)' style='height:10px;width:300px;background-color:blue;border-radius:5px;'>
-<div style='height:10px;width:10px;background-color:red;margin-top:-20px;border-radius:5px'id='cb' >
+<div style='height:10px;width:10px;margin-left:550px;margin-top:-350px;background-color:red;margin-top:-20px;border-radius:5px' id='cb' >
 </div>
 </div>
 
 
 <div style='height:375px;width:500px;/* background-color:gray; */margin-left:550px;margin-top:-350px;'>
-
+    
 <canvas id='cs' height='375' width='500'/>
 
 </div>

@@ -17,7 +17,7 @@
   	</association>
   </resultMap>
   <sql id="columns" >
-    ad.id id, ad.name name, password, real_name, operation, ad.enable, cellphone, totp, role_id, ro.name role_name, ro.enable role_enable
+    ad.id id, ad.name name, password, real_name, operation, cellphone, totp, role_id, ro.name role_name
   </sql>
   <select id="queryForList" resultMap="ResultMap">
     select 
