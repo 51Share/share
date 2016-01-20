@@ -26,7 +26,7 @@
 			<mvc:exclude-mapping path="/gauth/**" />
 			<mvc:exclude-mapping path="/barcode" />
 			<mvc:exclude-mapping path="/validate/code" />
-			<mvc:exclude-mapping path="/res/images/favicon.ico" />
+			<!-- <mvc:exclude-mapping path="/res/images/favicon.ico" /> -->
 			<!-- exclude mapping for web resource-->
 			<mvc:exclude-mapping path="/res/**" />
 			<beans:bean class="com.league.share.web.intercepter.SecurityInterceptorAdapter" />

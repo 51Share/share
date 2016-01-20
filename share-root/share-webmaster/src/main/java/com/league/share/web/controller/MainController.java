@@ -18,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.alibaba.fastjson.JSONObject;
 import com.league.share.domain.Admin;
@@ -38,6 +39,36 @@ public class MainController extends BaseController{
 	
 	@Autowired
 	private SystemService systemService;
+	
+	@RequestMapping("header")
+	public String header() {
+		
+		return "include/header";
+	}
+	
+	@RequestMapping("menu")
+	public String menu() {
+		
+		return "include/menu";
+	}
+	
+	@RequestMapping("navbar")
+	public String navbar() {
+		
+		return "include/navbar";
+	}
+	
+	@RequestMapping("themes")
+	public String themes() {
+		
+		return "include/themes";
+	}
+	
+	@RequestMapping("main")
+	public String main() {
+		
+		return "include/main";
+	}
 	
 	@RequestMapping(value="index", method=RequestMethod.GET)
 	public String index(HttpServletRequest request) {
@@ -77,6 +108,14 @@ public class MainController extends BaseController{
 			}
 		}
 		return result;
+	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		if(session != null) {
+			session.invalidate();
+		}
+		return InternalResourceViewResolver.REDIRECT_URL_PREFIX+String.valueOf('/');
 	}
 	
 	@RequestMapping(value="validate/code", method=RequestMethod.GET)

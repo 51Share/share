@@ -2,13 +2,19 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="icon" href="${pageContext.request.contextPath}/res/images/favicon.ico" type="images/x-icon" />
-	<%-- <link type="images/x-icon" rel="shortcut icon" href="${pageContext.request.contextPath}/res/images/favicon.ico"> --%>
-	<title><spring:message code="system.name" /></title>
-  </head>
-  <body>
-  	hello world (工作台)
-  </body>
- </html>
+	<head>
+		<jsp:include page="${pageContext.request.contextPath}/header" flush="true" />
+	</head>
+	<body data-theme="default">
+		<div id="wrapper">
+			<jsp:include page="${pageContext.request.contextPath}/menu" flush="true" />
+			<div id="container-wrapper" class="container-wrapper">      
+    			<jsp:include page="${pageContext.request.contextPath}/navbar" flush="true" />
+				<div id="container-content" class="container-content">
+	 				<jsp:include page="${pageContext.request.contextPath}/themes" flush="true" />
+	 				<jsp:include page="${pageContext.request.contextPath}/main" flush="true" />              
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

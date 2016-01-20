@@ -28,7 +28,11 @@ public class SecurityInterceptorAdapter extends HandlerInterceptorAdapter {
 		
 		Object security = request.getSession().getAttribute(ApplicationConfigUtil.getSessionKey());
 		if (security == null) {
-//			response.sendRedirect(SLASH);
+			if(request.getHeader("x-requested-with") != null && request.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")) {    
+				response.setHeader("sessionstatus", "timeout");   
+			} else {
+				response.setHeader("sessionstatus", null);   
+			}
 			request.setAttribute("message", messageSource.getMessage("no.session", null, Locale.getDefault()));
 			request.getRequestDispatcher(SLASH).forward(request, response);
 			return false;
