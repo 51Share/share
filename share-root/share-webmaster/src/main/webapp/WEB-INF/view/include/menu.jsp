@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<body data-theme="default">
@@ -14,36 +16,30 @@
 		            </li>
 	      		</ul>
 	   			<ul id="side-nav" class="side-nav nav">
-	       			<li class="side-nav-group">
+	   				<li class="side-nav-group">
 	       				<span class="name">工作菜单</span>
 	       			</li>
-	       			<li class="@@activate-ui-elements">
-	       				<a href="#">
-	        					<i class="fa fa-desktop"></i> 
-	               			<span class="name">系统管理</span>
-	               			<span class="fa expand"></span>
-	           			</a>
-	           			<ul class="nav nav-second-level collapse">
-	               			<li class="@@activate-components">
-	                   			<a href="components.html">管理员管理</a>
-	               			</li>
-	               			<li class="@@activate-buttons">
-	                   			<a href="buttons.html">角色管理</a>
-	               			</li>
-	               			<li class="@@activate-panels">
-	                   			<a href="panels.html">系统参数设置 </a>
-	               			</li>
-	               			<li class="@@activate-panel-grid">
-	                   			<a href="panelgrid.html"> 黑白名单管理</a>
-	               			</li>
-	               			<li class="@@activate-tabs">
-	                   			<a href="tabs.html">登录日志管理</a>
-	               			</li>
-	               			<li class="@@activate-spinners">
-	                   			<a href="spinners.html">操作日志管理</a>
-	               			</li>
-	           			</ul>
-	       			</li>
+	   				<c:forEach items="${session_share_key.menu}" var="menu" varStatus="m">
+		   				<li class="@@activate-ui-elements">
+			                <a href="${menu.key.url}">
+			                    <i class="${menu.key.icon}"></i> 
+			                    <span class="name">${menu.key.name}</span>
+			                    <span class="fa expand"></span>
+			                </a>
+			                <c:if test="${fn:length(menu.value) > 0}">
+			                	<ul class="nav nav-second-level collapse">
+			                		<c:forEach items="${menu.value}" var="childen" varStatus="md">
+			                			<li class="@@activate-components">
+		                   					<a href="${childen.url}">
+		                   						<i class="${childen.icon}"></i>
+		                   						${childen.name}
+		                   					</a>
+		               					</li>
+			                		</c:forEach>
+			                	</ul>
+			                </c:if>
+		            	</li>
+	   				</c:forEach>
 	   			</ul>
 			</div>
 		</nav>

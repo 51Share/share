@@ -32,7 +32,7 @@
     <include refid="columns" />
     from resource re left join role_resource rr on re.id = rr.resource_id 
     where re.enable = 1 and re.parent_id = #{parentId, jdbcType=INTEGER} 
-    <if test="roleId != null">
+    <if test="roleId != null and roleId > 0">
 	    and rr.role_id = #{roleId, jdbcType=INTEGER}
 	</if>
 	order by re.sort asc

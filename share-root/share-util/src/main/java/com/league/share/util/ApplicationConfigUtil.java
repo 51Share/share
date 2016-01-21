@@ -47,26 +47,6 @@ public class ApplicationConfigUtil {
 		return BUNDLE.getString("session.key");
 	}
 	
-	public static final String getMerchantSessionKey() {
-		return BUNDLE.getString("session.merchant.key");
-	}
-	
-	public static final String getWeixinSessionKey() {
-		return BUNDLE.getString("session.weixin.key");
-	}
-	
-	public static final String getOSSPath() {
-		return BUNDLE.getString("oss.path");
-	}
-	
-	public static final String getResourcePath() {
-		return BUNDLE.getString("resource.path");
-	}
-
-	public static final String getMobilePath() {
-		return BUNDLE.getString("mobile.path");
-	}
-	
 	public static final String get(String key) {
 		return BUNDLE.getString(key);
 	}

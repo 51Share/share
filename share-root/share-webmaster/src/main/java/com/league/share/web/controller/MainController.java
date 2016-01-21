@@ -47,8 +47,8 @@ public class MainController extends BaseController{
 	}
 	
 	@RequestMapping("menu")
-	public String menu() {
-		
+	public String menu(HttpServletRequest request) {
+		request.setAttribute(ApplicationConfigUtil.getSessionKey(), request.getSession().getAttribute(ApplicationConfigUtil.getSessionKey()));
 		return "include/menu";
 	}
 	
@@ -91,6 +91,9 @@ public class MainController extends BaseController{
 					if(admin.getPassword() != null && admin.getPassword().equals(DigestUtils.md5Hex(password))) {
 						Security security = new Security();
 						security.setAdmin(admin);
+						if(admin.getRole() != null){
+							security.setMenu(systemService.getMenu(admin.getRole().getId()));
+						}
 						request.getSession().setAttribute(ApplicationConfigUtil.getSessionKey(), security);
 						result.put(CODE, 201);
 						result.put(MSG, null);

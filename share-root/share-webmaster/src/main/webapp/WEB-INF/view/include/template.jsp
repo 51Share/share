@@ -10,8 +10,8 @@
 			<jsp:include page="${pageContext.request.contextPath}/menu" flush="true" />
 			<div id="container-wrapper" class="container-wrapper">      
     			<jsp:include page="${pageContext.request.contextPath}/navbar" flush="true" />
-    			<jsp:include page="${pageContext.request.contextPath}/themes" flush="true" />
 				<div id="container-content" class="container-content">
+	 				<jsp:include page="${pageContext.request.contextPath}/themes" flush="true" />
 	 				<jsp:include page="${pageContext.request.contextPath}/main" flush="true" />              
 				</div>
 			</div>

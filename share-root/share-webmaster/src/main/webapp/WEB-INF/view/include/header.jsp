@@ -33,6 +33,8 @@
 		<script src="${pageContext.request.contextPath}/res/js/vendor/lodash.min.js"></script>
 		<script src="${pageContext.request.contextPath}/res/js/vendor/moment.min.js"></script>
 		<script src="${pageContext.request.contextPath}/res/js/vendor/sweetalert.min.js"></script>
+		<%-- <script src="${pageContext.request.contextPath}/res/js/vendor/summernote.min.js"></script> --%>
+		<script src="${pageContext.request.contextPath}/res/js/vendor/toastr.min.js"></script>
 		<%-- <script src="${pageContext.request.contextPath}/res/js/demo/demo-alert.js"></script> --%>
 	</head>
 </html>
