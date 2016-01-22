@@ -16,7 +16,7 @@ public class SystemController {
 	
 	@RequestMapping("/admin/list")
 	public String listAdmin(Model model){
-		
+		model.addAttribute("admins", systemService.listAdmin(1, 10));
 		return "system/admin/list";
 	}
 }

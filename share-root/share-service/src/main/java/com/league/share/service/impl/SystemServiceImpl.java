@@ -1,5 +1,6 @@
 package com.league.share.service.impl;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,5 +35,12 @@ public class SystemServiceImpl implements SystemService{
 			}
 		}
 		return menus;
+	}
+
+	public List<Admin> listAdmin(int offset, int size) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("offset", offset);
+		params.put("size", size);
+		return adminDao.queryForList(params);
 	}
 }

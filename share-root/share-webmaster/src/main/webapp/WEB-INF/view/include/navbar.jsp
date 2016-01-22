@@ -11,7 +11,7 @@
         </div> --%>
    		<div id="container-navbar" class="container-navbar navbar">
    			<div class="r-container-navbar">
-       			<a id="right-notifier-toggler" class="btn btn-default btn-bordered">
+       			<!-- <a id="right-notifier-toggler" class="btn btn-default btn-bordered">
            			<span class="fa fa-bell-o"></span>
            			<span class="badge badge-danger badge-xs upbadges">1</span>
        			</a>
@@ -19,17 +19,14 @@
 			        <a class="btn btn-default btn-bordered dropdown-toggle" data-toggle="dropdown">
 			            <span class="fa fa-magic"></span>
 			        </a>
-			        <!-- Include the theme selector component -->
-			    </span>
-			    <a id="fullscreen-toggler" class="btn btn-default btn-bordered">
-			         <span class="fa fa-arrows-alt"></span>
+			        Include the theme selector component
+			    </span>-->
+			    <a class="btn btn-default btn-bordered">
+			           	欢迎您 :   ${session_share_key.admin.realName}
 			    </a>
 			    <a class="btn btn-default btn-bordered" href="javascript:logout()">
-			         <span class="fa fa-sign-out r-mar-5"></span>退 出
+			       <span class="fa fa-sign-out r-mar-5"></span>退 出
 			    </a>
-			    <!-- <a class="btn btn-default btn-bordered" >
-			         <span class="fa fa-sign-out r-mar-5"></span>退 出
-			    </a> -->
    			</div>
 		</div>
 	</body>

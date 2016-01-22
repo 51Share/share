@@ -35,7 +35,7 @@
     <if test="roleId != null and roleId > 0">
 	    and rr.role_id = #{roleId, jdbcType=INTEGER}
 	</if>
-	order by re.sort asc
+	order by re.id,re.sort asc
   </select>
   <insert id="insertRoleResource" >
   	insert into role_resource(role_id, resource_id) values

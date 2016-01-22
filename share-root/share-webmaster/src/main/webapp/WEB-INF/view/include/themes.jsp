@@ -4,8 +4,8 @@
 <html>
 	<body data-theme="default">
    		<div id="demo-settings">
- 			<a id="demo-settings-toggler" href="#" class="r-pad-5">
-    			<i class="fa fa-cogs"></i> 
+ 			<a id="demo-settings-toggler" href="#">
+    			<i class="fa fa-cogs fa-spin"></i> 
  			</a>
  			<h5 class="header">设置</h5>
  			<h5 class="header">背景板 </h5>

@@ -8,16 +8,17 @@
     <result column="cellphone" property="cellphone" jdbcType="VARCHAR" />
     <result column="real_name" property="realName" jdbcType="VARCHAR" />
     <result column="operation" property="operation" jdbcType="TINYINT" />
-    <result column="enable" property="enable" jdbcType="TINYINT" />
+    <result column="locked" property="locked" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
     <result column="totp" property="totp" jdbcType="INTEGER" />
     <association property="role" javaType="Role">
     	<id column="role_id" property="id" jdbcType="INTEGER" />
     	<result column="role_name" property="name" jdbcType="VARCHAR" />
-    	<result column="role_enable" property="enable" jdbcType="TINYINT" />
+    	<result column="role_status" property="status" jdbcType="TINYINT" />
   	</association>
   </resultMap>
   <sql id="columns" >
-    ad.id id, ad.name name, password, real_name, operation, cellphone, totp, role_id, ro.name role_name
+    ad.id id, ad.name name, password, ip, locked, real_name, operation, ad.status status, cellphone, totp, role_id, ro.name role_name,ro.status role_status
   </sql>
   <select id="queryForList" resultMap="ResultMap">
     select 

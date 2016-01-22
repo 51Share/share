@@ -6,15 +6,30 @@
 		<jsp:include page="${pageContext.request.contextPath}/header" flush="true" />
 	</head>
 	<body data-theme="default">
-		<div id="wrapper">
+		<div id="wrapper" scrolling="no">
 			<jsp:include page="${pageContext.request.contextPath}/menu" flush="true" />
 			<div id="container-wrapper" class="container-wrapper">      
     			<jsp:include page="${pageContext.request.contextPath}/navbar" flush="true" />
     			<jsp:include page="${pageContext.request.contextPath}/themes" flush="true" />
+    			<div id="container-breadcrumb" class="container-breadcrumb">
+				    <div class="row">
+				        <div class="col-lg-10">
+				            <ol class="breadcrumb">
+				                <li>
+				                    <a href="#">
+				                        <i class="fa fa-home"></i> 首页
+				                    </a>
+				                </li>
+				            </ol>
+				        </div>
+				    </div>
+				</div>
 				<div id="container-content" class="container-content">
 	 				<jsp:include page="${pageContext.request.contextPath}/main" flush="true" />              
 				</div>
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+	</script>
 </html>

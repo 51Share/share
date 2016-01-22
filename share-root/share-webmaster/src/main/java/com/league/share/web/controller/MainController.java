@@ -40,31 +40,31 @@ public class MainController extends BaseController{
 	@Autowired
 	private SystemService systemService;
 	
-	@RequestMapping("header")
+	@RequestMapping(value="header", method=RequestMethod.GET)
 	public String header() {
 		
 		return "include/header";
 	}
 	
-	@RequestMapping("menu")
+	@RequestMapping(value="menu",method=RequestMethod.GET)
 	public String menu(HttpServletRequest request) {
 		request.setAttribute(ApplicationConfigUtil.getSessionKey(), request.getSession().getAttribute(ApplicationConfigUtil.getSessionKey()));
 		return "include/menu";
 	}
 	
-	@RequestMapping("navbar")
+	@RequestMapping(value="navbar",method=RequestMethod.GET)
 	public String navbar() {
 		
 		return "include/navbar";
 	}
 	
-	@RequestMapping("themes")
+	@RequestMapping(value="themes",method=RequestMethod.GET)
 	public String themes() {
 		
 		return "include/themes";
 	}
 	
-	@RequestMapping("main")
+	@RequestMapping(value="main", method=RequestMethod.GET)
 	public String main() {
 		
 		return "include/main";
@@ -113,7 +113,7 @@ public class MainController extends BaseController{
 		return result;
 	}
 	
-	@RequestMapping("logout")
+	@RequestMapping(value="logout",method=RequestMethod.GET)
 	public String logout(HttpSession session) {
 		if(session != null) {
 			session.invalidate();

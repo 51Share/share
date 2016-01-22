@@ -8,6 +8,6 @@ import com.league.share.domain.Resource;
 
 public interface SystemService {
 	Admin getAdmin(String name);
-	
+	List<Admin> listAdmin(int offset, int size);
 	Map<Resource, List<Resource>> getMenu(int roleId);
 }
