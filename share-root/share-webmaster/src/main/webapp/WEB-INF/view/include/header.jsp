@@ -16,6 +16,8 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.min.css">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/themes/theme-all.min.css">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/demo.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/bootstrap-tagsinput.css">
+    	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/chosen.min.css">
 		<link rel="icon" href="${pageContext.request.contextPath}/res/images/favicon.ico" type="images/x-icon" />
 		
 		<script src="${pageContext.request.contextPath}/res/js/vendor/jquery.min.js"></script>
@@ -34,8 +36,12 @@
 		<script src="${pageContext.request.contextPath}/res/js/vendor/moment.min.js"></script>
 		<script src="${pageContext.request.contextPath}/res/js/vendor/sweetalert.min.js"></script>
 		<script src="${pageContext.request.contextPath}/res/js/layer.js"></script>
-		<%-- <script src="${pageContext.request.contextPath}/res/js/vendor/summernote.min.js"></script> --%>
 		<script src="${pageContext.request.contextPath}/res/js/vendor/toastr.min.js"></script>
-		<%-- <script src="${pageContext.request.contextPath}/res/js/demo/demo-alert.js"></script> --%>
+		
+		<script src="${pageContext.request.contextPath}/res/js/vendor/bootstrap-tagsinput.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/res/js/vendor/chosen.jquery.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/res/js/vendor/bootstrap-maxlength.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/res/js/demo/demo-form-basic.js"></script>
+
 	</head>
 </html>

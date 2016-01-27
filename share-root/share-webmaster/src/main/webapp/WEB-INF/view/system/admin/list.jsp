@@ -37,7 +37,7 @@
 			            <div class="panel-heading bg-theme-light">
 			                <div class="row">
 			                    <div class="col-lg-12 pad-v-1">
-				                    <a id="add" class="btn btn-success btn-icon" href="javascript:add('/index')">
+				                    <a id="add" class="btn btn-success btn-icon" href="javascript:add('${pageContext.request.contextPath}/system/admin/add')">
 								         <span class="fa fa-plus r-mar-5"></span>新增
 								    </a>
 			                    </div>
@@ -143,9 +143,20 @@
     	var index = layer.open({
     		type: 2,
     		title: '管理员新增',
-    		content: 'a.jsp'
+    		content: [url,'no'],
+    		skin: 'layui-layer-lan',
+    		area: ['450px', '400px'],
+    		/* icon: 1, */
+    		move:false,//拖拽
+    		moveOut: true,
+    		shadeClose: true, //点击遮罩关闭层
+    		scrollbar :true, //浏览器滚动条
+    		moveType:1,//拖拽效果
+    		load:(0,{
+    			shade: false
+    		})
     	});
-    	layer.full(index);
+    	/* layer.iframeAuto(index); */
     }
    
 	</script>

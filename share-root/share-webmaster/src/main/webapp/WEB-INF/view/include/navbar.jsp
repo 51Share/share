@@ -21,7 +21,10 @@
 			        </a>
 			        Include the theme selector component
 			    </span>-->
-			    <a class="btn btn-default btn-bordered">
+			    <a data-content="点我试试" 
+                        data-placement="left" data-toggle="popover" data-container="body" 
+                        class="btn btn-default btn-bordered popover-sm mt-5 " type="button"
+                        data-trigger="hover">
 			           	欢迎您 :   ${session_share_key.admin.realName}
 			    </a>
 			    <a class="btn btn-default btn-bordered" href="javascript:logout()">

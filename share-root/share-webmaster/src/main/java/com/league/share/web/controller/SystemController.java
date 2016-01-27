@@ -19,4 +19,10 @@ public class SystemController {
 		model.addAttribute("admins", systemService.listAdmin(1, 10));
 		return "system/admin/list";
 	}
+	
+	@RequestMapping("/admin/add")
+	public String addAdmin(Model model){
+		//model.addAttribute("admins", systemService.listAdmin(1, 10));
+		return "system/admin/add";
+	}
 }
