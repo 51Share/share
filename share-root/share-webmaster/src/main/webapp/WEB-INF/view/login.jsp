@@ -4,10 +4,10 @@
 <html>
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="${pageContext.request.contextPath}/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-	<link href="${pageContext.request.contextPath}/res/css/H-ui.login.css" rel="stylesheet" type="text/css" />
-	<link href="${pageContext.request.contextPath}/res/css/style.css" rel="stylesheet" type="text/css" />
-	<link href="${pageContext.request.contextPath}/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/res/css/login/H-ui.min.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/res/css/login/H-ui.login.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/res/css/login/style.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/res/css/login/iconfont.css" rel="stylesheet" type="text/css" />
 	<link rel="icon" href="${pageContext.request.contextPath}/res/images/favicon.ico" type="images/x-icon" />
 	<title><spring:message code="system.name" /></title>
   </head>
@@ -50,9 +50,9 @@
 	  </div>
 	</div>
 	<div class="footer"><spring:message code="system.copyright" /></div>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/res/lib/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/res/lib/jquery/1.9.1/jquery.tips.js"></script> 
-	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/H-ui.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/login/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/login/jquery/1.9.1/jquery.tips.js"></script> 
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/login/H-ui.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$('#loginWraper').find('input').css({'font-style':'oblique','font-weight':'900', 'border-radius':'8px', 'ime-mode':'disabled'});

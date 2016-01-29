@@ -12,7 +12,6 @@ public interface RoleDao {
 	int delete(int id);
 	Role selectById(int id);
 	int selectByName(@Param("id")int id, @Param("name")String name);
-	int enable(@Param("id")int id, @Param("status")short status);
-	List<Role> selectUsingList();
-	List<Role> listAll();
+	int enable(@Param("id")int id, @Param("status")int status);
+	List<Role> queryForList(@Param("status")int status);
 }

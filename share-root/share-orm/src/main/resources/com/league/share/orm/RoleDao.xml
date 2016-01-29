@@ -10,17 +10,16 @@
   <sql id="columns" >
     id, name, status, remark
   </sql>
-  <select id="listAll" resultMap="ResultMap">
-    select 
-    <include refid="columns" />
-    from role order by id desc
+  <select id="queryForList" parameterType="int" resultMap="ResultMap">
+    select <include refid="columns" />from role 
+    <where>
+        <if test="status >= 0">
+            status = #{status,jdbcType=TINYINT}
+        </if>
+    </where>
+    order by id
   </select>
-  <select id="selectUsingList" resultMap="ResultMap" >
-    select 
-    <include refid="columns" />
-    from role where status = 1 order by id
-  </select>
-  <select id="selectById" resultMap="ResultMap" parameterType="java.lang.Integer" >
+  <select id="selectById" resultMap="ResultMap" parameterType="java.lang.Integer">
     select 
     <include refid="columns" />
     from role where id = #{id,jdbcType=INTEGER}

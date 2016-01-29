@@ -16,7 +16,7 @@ public class Admin implements Serializable{
 	private String lockedReason;
 	private Role role;
 	private short operation;
-	private short status;
+	private int status;
 	private int totp;
 	
 	public Admin() {
@@ -102,12 +102,12 @@ public class Admin implements Serializable{
 	public void setOperation(short operation) {
 		this.operation = operation;
 	}
-
-	public short getStatus() {
+	
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(short status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 

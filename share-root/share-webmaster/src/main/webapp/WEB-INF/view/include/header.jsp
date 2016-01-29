@@ -4,44 +4,29 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="keywords" content="admin,template,lightweight,dashboard,responsive,webapp,css3,html5,jquery,bootstrap">
-		<title><spring:message code="system.name" /></title>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/pace-theme-minimal.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/bootstrap.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/metisMenu.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/animate.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/toastr.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/font-awesome.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/sweetalert.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/themes/theme-all.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/demo.min.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/bootstrap-tagsinput.css">
-    	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/vendor/chosen.min.css">
 		<link rel="icon" href="${pageContext.request.contextPath}/res/images/favicon.ico" type="images/x-icon" />
+		<title><spring:message code="system.name" /></title>
 		
-		<script src="${pageContext.request.contextPath}/res/js/vendor/jquery.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/vendor/jquery-ui.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/vendor/bootstrap.min.js"></script>
+		<!-- css import-->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/bootstrap.min.css?v=3.3.6">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/font-awesome.min.css?v=4.4.0">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/animate.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/sweetalert.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/iCheck/icheck.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/style.min.css?v=4.1.0">
 		
-		<script src="${pageContext.request.contextPath}/res/js/main.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/loremizer.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/panels.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/deepassword.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/demo/demo.min.js"></script>
-		
-		<script src="${pageContext.request.contextPath}/res/js/vendor/metisMenu.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/vendor/jquery.slimscroll.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/vendor/lodash.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/vendor/moment.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/vendor/sweetalert.min.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/layer.js"></script>
-		<script src="${pageContext.request.contextPath}/res/js/vendor/toastr.min.js"></script>
-		
-		<script src="${pageContext.request.contextPath}/res/js/vendor/bootstrap-tagsinput.min.js"></script>
-    	<script src="${pageContext.request.contextPath}/res/js/vendor/chosen.jquery.min.js"></script>
-    	<script src="${pageContext.request.contextPath}/res/js/vendor/bootstrap-maxlength.min.js"></script>
-    	<script src="${pageContext.request.contextPath}/res/js/demo/demo-form-basic.js"></script>
-
+		<!-- js import-->
+		<script src="${pageContext.request.contextPath}/res/js/jquery.min.js?v=2.1.4"></script>
+		<script src="${pageContext.request.contextPath}/res/js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="${pageContext.request.contextPath}/res/js/jquery.metisMenu.js"></script>
+		<script src="${pageContext.request.contextPath}/res/js/jquery.slimscroll.min.js"></script>
+		<script src="${pageContext.request.contextPath}/res/plugins/layer/layer.min.js"></script>
+		<script src="${pageContext.request.contextPath}/res/js/hplus.min.js?v=4.1.0"></script>
+		<script src="${pageContext.request.contextPath}/res/js/contabs.min.js"></script>
+		<script src="${pageContext.request.contextPath}/res/js/pace.min.js"></script>
+		<script src="${pageContext.request.contextPath}/res/js/sweetalert.min.js"></script>
+		<script src="${pageContext.request.contextPath}/res/js/iCheck/icheck.min.js"></script>
+		<script src="${pageContext.request.contextPath}/res/plugins/validate/jquery.validate.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/res/plugins/validate/messages_zh.min.js"></script>
 	</head>
 </html>

@@ -31,7 +31,7 @@
   <select id="selectById" resultMap="ResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="columns" />
-    from admin ad left join role ro on ad.role_id=ro.id where ad.id = #{id,jdbcType=INTEGER}
+    from admin ad left join role ro on ad.role_id=ro.id where ad.id = #{adminId,jdbcType=INTEGER}
   </select>
   <select id="selectByName" resultMap="ResultMap">
     select 
@@ -93,9 +93,12 @@
       <if test="cellphone != null" >
         cellphone = #{cellphone,jdbcType=VARCHAR},
       </if>
-      <if test="enable >= 0" >
-        enable = #{enable,jdbcType=TINYINT},
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
       </if>
+     <!--  <if test="enable >= 0" >
+        enable = #{enable,jdbcType=TINYINT},
+      </if> -->
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -106,6 +109,6 @@
   	update admin set enable = #{enable,jdbcType=SMALLINT} where id = #{id,jdbcType=INTEGER}
   </update>
   <delete id="delete" parameterType="java.lang.Integer" >
-    delete from admin where id = #{id,jdbcType=INTEGER}
+    delete from admin where id = #{adminId,jdbcType=INTEGER}
   </delete>
 </mapper>

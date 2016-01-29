@@ -8,23 +8,23 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-	$(document).ready(function(){
-		Command: toastr['success']("This is a Toastr notification. Lorem ipsum dolor sit amet.");
-		toastr.options = {
-		  'closeButton': false,
-		  'debug': false,
-		  'preventDuplicates': false,
-		  'positionClass': "toast-top-right",
-		  'onclick': null,
-		  'showDuration': "400",
-		  'hideDuration': "1000",
-		  'timeOut': "7000",
-		  'extendedTimeOut': "1000",
-		  'showEasing': "swing",
-		  'hideEasing': "swing",
-		  'showMethod': "show",
-		  'hideMethod': "hide"
-		}
-	})
+		/* $(document).ready(function(){
+			Command: toastr['success']("This is a Toastr notification. Lorem ipsum dolor sit amet.");
+			toastr.options = {
+			  'closeButton': false,
+			  'debug': false,
+			  'preventDuplicates': false,
+			  'positionClass': "toast-top-right",
+			  'onclick': null,
+			  'showDuration': "400",
+			  'hideDuration': "1000",
+			  'timeOut': "7000",
+			  'extendedTimeOut': "1000",
+			  'showEasing': "swing",
+			  'hideEasing': "swing",
+			  'showMethod': "show",
+			  'hideMethod': "hide"
+			}
+		}) */
 	</script>
 </html>
