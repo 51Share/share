@@ -63,7 +63,7 @@
 		                        </div>
 	                            <div class="form-group" style="margin-top: 30px">
 		                        	<div class="col-xs-12 center col-xs-offset-3">
-		                            	 <button class="btn btn-success btn-icon" type="submit"><span class="fa fa-check r-mar-5"></span>保存</button>
+		                            	 <button class="btn btn-success btn-icon" type="button"  onclick="javascript:saveInfo()"><span class="fa fa-check r-mar-5"></span>保存</button>
 										<a id="add" class="btn btn-success btn-icon col-xs-offset-2" href="javascript:cancel();">
 							 				<span class="fa fa-times r-mar-5"></span>&nbsp;取消
 										</a>
@@ -77,9 +77,29 @@
 	    </div>
 	</body>
 	<script type="text/javascript">
-		/* function save(){
-			$('#signupForm').submit();
-		} */
+		function saveInfo(){
+			$("#signupForm").validate({
+				// 验证规则     
+		        rules:{}, 
+		        // 验证提示信息（失败时）     
+		        message:{},     
+		        errorElement: 'span',                                             
+		        // 放置错误信息的元素，可以是其他的。     
+		        errorPlacement: function(error,element)         
+		        // 将错误提示信息放在什么地方     
+		        {},     
+		        // 成功时执行     
+		        success: function(label)     
+		        {     
+		            label.text(" ").addClass("success");  // 将错误内容清空，一定要是" "有空格，否则IE有问题。            
+		        },
+		        submitHandler: function(form) {
+		        	form.submit();
+		        } 
+			});
+			$("#signupForm").submit();
+			
+		}
 		
 		function cancel(){
 			var index = parent.layer.getFrameIndex(window.name);

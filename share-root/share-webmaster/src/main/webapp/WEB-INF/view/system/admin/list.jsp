@@ -126,12 +126,12 @@
 	<body  class="gray-bg">
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-xs-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <div class="row">
-		                    <div class="col-lg-12 pad-v-1">
-			                    <a id="add" class="btn btn-success btn-sm btn-icon" href="javascript:add('${pageContext.request.contextPath}/system/admin/add/0')">
+		                    <div class="col-xs-12 pad-v-1">
+			                    <a id="add" class="btn btn-success btn-xs btn-icon" href="javascript:add('${pageContext.request.contextPath}/system/admin/add/0')">
 							         <span class="fa fa-plus r-mar-5"></span>&nbsp;新增
 							    </a>
 		                    </div>
@@ -142,13 +142,13 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-										<th></th>
-                                        <th>用户名</th>
-                                        <th>角色</th>
-                                        <th>真实姓名</th>
-                                        <th>手机</th>
-                                        <th>状态</th>
-                                        <th style="width: 20%">操作</th>
+										<th class="col-xs-1"></th>
+                                        <th class="col-xs-2">用户名</th>
+                                        <th class="col-xs-1" >角色</th>
+                                        <th class="col-xs-2">真实姓名</th>
+                                        <th class="col-xs-2">手机</th>
+                                        <th class="col-xs-1">状态</th>
+                                        <th class="col-xs-3">操作</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -173,21 +173,21 @@
                             				</c:choose>
                              			</td>
                              			<td>
-                             				<a id="add" class="btn btn-success btn-sm btn-icon" href="javascript:edit(${admin.id})">
+                             				<a id="add" class="btn btn-success btn-xs btn-icon" href="javascript:edit(${admin.id})">
 												<span class="fa fa-pencil r-mar-5"></span>&nbsp;修改
 											</a>
-											<a id="add" class="btn btn-success btn-sm btn-icon" href="javascript:remove(${admin.id})">
+											<a id="add" class="btn btn-success btn-xs btn-icon" href="javascript:remove(${admin.id})">
 											    <span class="fa fa-trash-o r-mar-5"></span>&nbsp;删除
 											</a>
                              				<c:choose>
                             					<c:when test="${admin.locked == 0}">
                             						<c:if test="${admin.status < 1}">
-                            							<a id="add" class="btn btn-success btn-sm btn-icon" href="javascript:editStatus(${admin.id},${admin.status})">
+                            							<a id="add" class="btn btn-success btn-xs btn-icon" href="javascript:editStatus(${admin.id},${admin.status})">
 															<span class="fa fa-check r-mar-5"></span>&nbsp;启用
 														</a>
                             						</c:if>
                             						<c:if test="${admin.status > 0}">
-                            							<a id="add" class="btn btn-success btn-sm btn-icon" href="javascript:editStatus(${admin.id},${admin.status})">
+                            							<a id="add" class="btn btn-success btn-xs btn-icon" href="javascript:editStatus(${admin.id},${admin.status})">
 															<span class="fa fa-times r-mar-5"></span>&nbsp;禁用
 														</a>
                             						</c:if>

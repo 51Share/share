@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.league.share.domain.Admin;
 import com.league.share.service.SystemService;
@@ -36,10 +37,9 @@ public class SystemController {
 	}
 	
 	@RequestMapping("/admin/save")
-	@ResponseBody
-	public void saveAdmin(Admin admin){
+	public String saveAdmin(Admin admin){
 		systemService.saveAdmin(admin);
-		/*return InternalResourceViewResolver.REDIRECT_URL_PREFIX+"//system/admin/list";*/
+		return InternalResourceViewResolver.REDIRECT_URL_PREFIX+"/system/admin/list";
 	}
 	
 	@RequestMapping("/admin/remove")
